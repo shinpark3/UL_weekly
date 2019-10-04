@@ -28,7 +28,6 @@ def get_MY():
         JOIN shopee_bi_replenishment_data_pool_ext_replenishment_info e  
         ON c.sku_id=e.sku_id
         WHERE e.sourcing_status = 0
-        
         AND c.grass_date >= current_date - interval '31' day
         AND c.grass_region ='MY'
         AND c.shopid = 26152357
@@ -46,7 +45,6 @@ def get_PH():
         JOIN shopee_bi_replenishment_data_pool_ext_replenishment_info e  
         ON c.sku_id=e.sku_id
         WHERE e.sourcing_status = 0
-        
         AND c.grass_date >= current_date - interval '31' day
         AND c.grass_region ='PH'
         AND c.shopid in (40492624, 40867978, 40495882)
@@ -64,7 +62,6 @@ def get_ID():
         JOIN shopee_bi_replenishment_data_pool_ext_replenishment_info e  
         ON c.sku_id=e.sku_id
         WHERE e.sourcing_status = 0
-        
         AND c.grass_date >= current_date - interval '31' day
         AND c.grass_region ='ID'
         AND c.shopid = 14318452
