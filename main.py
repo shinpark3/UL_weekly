@@ -87,7 +87,7 @@ def main():
     ph_pivot = ph_data.pivot_table(values='real_sales', columns='grass_date', index='sku_id').reset_index()
     id_pivot = id_data.pivot_table(values='real_sales', columns='grass_date', index='sku_id').reset_index()
 
-    filename = './UL_ATP_summary_template.xlsx'
+    filename = './UL_ATP_summary_template_v2.xlsx'
     writer = pd.ExcelWriter(filename, engine='openpyxl')
     writer.book = load_workbook(filename)
     writer.sheets = {ws.title: ws for ws in writer.book.worksheets}
@@ -97,3 +97,7 @@ def main():
         df.to_excel(writer, sheet_name, index=False, header=True, startrow=0, startcol=0)
     output_file_name = './{}_UL_ATP_Summary_{}.xlsx'.format(country, dt.date.today().strftime('%Y_%m_%d'))
     writer.book.save(output_file_name)
+
+
+if __name__ == '__main__':
+    main()
